@@ -321,7 +321,7 @@ function page_tail(
     project_footer($is_main, $show_date, $url_prefix);
     echo '
         <script src="'.url_base().'/jquery.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script src="'.url_base().'/bootstrap.min.js"></script>
         </div>
         </body>
         </html>
