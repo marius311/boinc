@@ -33,11 +33,11 @@ echo "<form action=\"forum_search_action.php\" method=\"post\">";
 row1(tra("Search query"));
 row2(tra("Search for keywords:")."<br />
     <small>".tra("Posts that contain all the specified words will be displayed")."</small>",
-    "<input type=\"text\" style=\"width: 290px\" name=\"search_keywords\" size=\"30\" /><br />
+    "<input class='form-control' type=\"text\" name=\"search_keywords\" size=\"30\" />
     <small>".tra("For example: \"screensaver freeze\"")."</small>");
 row2(tra("Search for author ID:")."<br />
     <small>".tra("Only posts by this author will be displayed")."</small>",
-    "<input type=\"text\" style=\"width: 150px\" name=\"search_author\" size=\"10\" /><br />
+    "<input class='form-control' type=\"text\" name=\"search_author\" size=\"10\" />
     <small>".tra("For example: \"43214\"")."</small>");
 
 row1(tra("Search options"));

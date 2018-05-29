@@ -105,7 +105,7 @@ echo '</td>
     <td valign=top align="right">
     <div class="form-group">
 ';
-echo select_from_array("sort", $forum_sort_styles, $sort_style);
+echo select_from_array("sort", $forum_sort_styles, $sort_style, 'inherit');
 echo '
     <input class="btn btn-success btn-sm" type="submit" value="Sort">
     </div>
@@ -216,13 +216,13 @@ function show_forum($forum, $start, $sort_style, $user) {
         //if (strlen($title) > $titlelength) {
         //    $title = substr($title, 0, $titlelength)."...";
         //}
-        echo "<td><a href=\"forum_thread.php?id=$thread->id\">$title</a><br></td>";
+        echo "<td class='threadline'><a href=\"forum_thread.php?id=$thread->id\">$title</a><br></td>";
 
         echo '
             <td>'.($thread->replies+1).'</td>
-            <td>'.user_links($owner, BADGE_HEIGHT_SMALL).'</td>
+            <td class="authorcol">'.user_links($owner, BADGE_HEIGHT_SMALL).'</td>
             <td>'.$thread->views.'</td>
-            <td>'.time_diff_str($thread->timestamp, time()).'</td>
+            <td class="lastpost">'.time_diff_str($thread->timestamp, time()).'</td>
             </tr>
         ';
         flush();

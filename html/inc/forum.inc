@@ -127,35 +127,32 @@ function link_count($x) {
 // show a banner with search form on left and PM info on right
 //
 function show_forum_header($user) {
-    echo '<form action="forum_search_action.php" method="POST">
-    ';
-    start_table();
     echo '
-        <tr>
+    <form action="forum_search_action.php" method="POST">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="input-group input-group-sm">
+                  <input type="hidden" name="search_max_time" value="30">
+                  <input type="hidden" name="search_forum" value="-1">
+                  <input type="hidden" name="search_sort" value="5">
+                  <input type="text" class="form-control" name="search_keywords" aria-describedby="basic-addon2">
+                  <span class="input-group-btn">
+                    <button class="btn btn-default" title="'.tra("Search for words in forum messages").'" type="submit">'.tra("Search forums").'</button>
+                  </span>
+                </div>
+            </div>
     ';
-
-    // Search
-    echo '
-        <td>
-        <input type="hidden" name="search_max_time" value="30">
-        <input type="hidden" name="search_forum" value="-1">
-        <input type="hidden" name="search_sort" value="5">
-        <input type="text" class="" name="search_keywords">
-        <input class="btn btn-primary btn-sm" title="'.tra("Search for words in forum messages").'" type="submit" value="'.tra("Search forums").'"><br>
-        <small><a href="forum_search.php">'.tra("Advanced search").'</a></small>
-        </td>
-    ';
-
     if ($user) {
-        echo "<td align=\"right\">\n";
+        echo "<div class='col-sm-8 text-right'>";
         echo "<p>".tra("Private messages").": ", pm_notification($user);
-        echo "</td>\n";
+        echo "</div>";
     }
-    echo "</tr>
-    ";
-    end_table();
-    echo "</form>
-    ";
+    echo '
+        </div> 
+        <small><a href="forum_search.php">'.tra("Advanced search").'</a></small>
+    </form>
+    <br/>
+    ';
 }
 
 // Output the forum/thread title.
@@ -226,7 +223,7 @@ function start_forum_table($headings) {
         $a[] = null;
     }
     $a[0] = 'style="width: 10em;"';
-    start_table('table-striped', 'table-layout:fixed');
+    start_table();
     row_heading_array($headings, $a);
 }
 
@@ -1316,7 +1313,7 @@ function show_thread_and_context($thread, $user) {
     }
     echo '
         </td><td class="numbers">'.($thread->replies+1).'</td>
-        <td>'.user_links($owner).'</td>
+        <td class="authorcol">'.user_links($owner).'</td>
         <td class="numbers">'.$thread->views.'</td>
         <td class="lastpost">'.time_diff_str($thread->timestamp, time()).'</td>
         </tr>

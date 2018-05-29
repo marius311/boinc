@@ -42,17 +42,19 @@ page_head(
     tra("Create account"), null, null, null, boinc_recaptcha_get_head_extra()
 );
 
-if (!NO_COMPUTING) {
-    echo "<p class=\"lead\">"
-        .tra(
-            "If you already have an account and want to run %1 on this computer, %2 go here %3.",
-            PROJECT,
-            '<a href=join.php>',
-            '</a>'
-        )
-        ."</p>
-    ";
-}
+
+echo '<h2>Create account</h2>';
+// if (!NO_COMPUTING) {
+//     echo "<p class=\"lead\">"
+//         .tra(
+//             "After creating your account, follow the rest of the instructions %2here%3 to start computing.",
+//             PROJECT,
+//             '<a href=join.php>',
+//             '</a>'
+//         )
+//         ."</p>
+//     ";
+// }
 
 $teamid = get_int("teamid", true);
 if ($teamid) {

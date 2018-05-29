@@ -279,8 +279,7 @@ function grid($top_func, $left_func, $right_func, $left_width=6) {
 
 function form_start($action, $method='get') {
     echo sprintf(
-        '<div class="container">
-        <form class="form-horizontal" method="%s" action="%s">'
+        '<form class="form-horizontal" method="%s" action="%s">'
         ,
         $method, $action
     );
@@ -293,7 +292,6 @@ function form_input_hidden($name, $value) {
 
 function form_end() {
     echo '</form>
-        </div>
     ';
 }
 

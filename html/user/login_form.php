@@ -41,6 +41,8 @@ if ($user) {
 }
 
 page_head(tra("Log in"));
+echo '<h2>Log in</h2>';
+
 
 if (0) {
 echo '

@@ -261,7 +261,7 @@ function page_head(
     echo "<title>$t</title>\n";
     echo '
         <meta charset="utf-8">
-        <link type="text/css" rel="stylesheet" href="'.secure_url_base().'/bootstrap.min.css" media="all">
+        <link type="text/css" rel="stylesheet" href="'.url_base().'/bootstrap.min.css" media="all">
     ';
     if (defined('STYLESHEET')) {
         $stylesheet = $url_base.STYLESHEET;
@@ -320,8 +320,8 @@ function page_tail(
     echo "<br>\n";
     project_footer($is_main, $show_date, $url_prefix);
     echo '
-        <script src="'.secure_url_base().'/jquery.min.js"></script>
-        <script src="'.secure_url_base().'/bootstrap.min.js"></script>
+        <script src="'.url_base().'/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
         </div>
         </body>
         </html>
@@ -402,7 +402,7 @@ function pretty_time_str($x) {
 
 function start_table_str($class="", $style="") {
     $s = $style?'style="'.$style.'"':'';
-    return '<div class="table">
+    return '<div class="table-responsive">
       <table '.$s.' width="100%" class="table table-condensed '.$class.'" >
     ';
 }
@@ -791,7 +791,7 @@ function verify_numeric(&$value, $low, $high = false) {
 // Generate a "select" element from an array of values
 //
 function select_from_array($name, $array, $selection=null, $width=240) {
-    $out = '<select style="color:#000;"class="form-control input-sm" style="width:'.$width.'px" name="'.$name.'">"';
+    $out = '<select class="form-control input-sm" style="width:'.$width.'px" name="'.$name.'">"';
 
     foreach ($array as $key => $value) {
         if ($value) {

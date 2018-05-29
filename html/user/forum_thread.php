@@ -275,7 +275,7 @@ echo '</td><td align="right">
     <input type="hidden" name="id" value="', $thread->id, '">
     <div class="form-group">
 ';
-echo select_from_array("sort", $thread_sort_styles, $sort_style);
+echo select_from_array("sort", $thread_sort_styles, $sort_style, 'inherit');
 echo ' <input class="btn btn-default btn-sm" type="submit" value="'.tra('Sort').'">
     </div>
     </td></tr></table>
