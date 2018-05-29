@@ -283,7 +283,7 @@ function show_preference_links() {
             "<a href=\"prefs.php?subset=global\">".tra("Computing preferences")."</a>"
         );
     }
-    row2(tra("Message boards and private messages"),
+    row2(tra("Forums and private messages"),
         "<a href=\"edit_forum_preferences_form.php\">".tra("Community preferences")."</a>"
     );
     if (!NO_COMPUTING) {
@@ -353,7 +353,7 @@ function show_community_private($user) {
     if (!DISABLE_FORUMS) {
         $tot = total_posts($user);
         if ($tot) {
-            row2(tra("Message boards"), "<a href=\"".url_base()."forum_user_posts.php?userid=$user->id\">".tra("%1 posts", $tot)."</a>");
+            row2(tra("Forums"), "<a href=\"".url_base()."forum_user_posts.php?userid=$user->id\">".tra("%1 posts", $tot)."</a>");
         }
     }
     
@@ -483,7 +483,7 @@ function community_links($clo, $logged_in_user){
     }
     if (!DISABLE_FORUMS) {
         if ($tot) {
-            row2(tra("Message boards"), "<a href=\"".url_base()."forum_user_posts.php?userid=$user->id\">".tra("%1 posts", $tot)."</a>");
+            row2(tra("Forums"), "<a href=\"".url_base()."forum_user_posts.php?userid=$user->id\">".tra("%1 posts", $tot)."</a>");
         }
     }
     if ($logged_in_user && $logged_in_user->id != $user->id) {

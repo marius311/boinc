@@ -64,7 +64,7 @@ if (strlen($user->prefs->avatar)){
 }
 row1(tra("Message-board identity"));
 row2(tra("Avatar")."
-    <br><p class=\"text-muted\">".tra("An image representing you on the message boards.")."
+    <br><p class=\"text-muted\">".tra("An image representing you on the forums.")."
     <br>".tra("Format: JPG or PNG. Size: at most 4 KB, 100x100 pixels")."</p>",
     "<input type=\"radio\" id=\"avatar_select_0\" name=\"avatar_select\" value=\"0\" ".$select_0.">
         <label for=\"avatar_select_0\">".tra("Don't use an avatar")."</label><br>

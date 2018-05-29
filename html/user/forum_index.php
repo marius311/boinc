@@ -69,7 +69,7 @@ function show_forum_summary($forum) {
     </tr>";
 }
 
-page_head(tra("Message boards"));
+page_head(tra("Forums"));
 
 show_forum_header($user);
 

@@ -73,7 +73,7 @@ case 0:
     if ($category->is_helpdesk) {
         page_head(tra("Questions and Answers").' : '.$forum->title);
     } else {
-        page_head(tra("Message boards").' : '.$forum->title);
+        page_head(tra("Forums").' : '.$forum->title);
     }
     show_forum_header($user);
     show_forum_title($category, $forum, NULL);

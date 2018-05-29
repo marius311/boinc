@@ -164,7 +164,7 @@ function show_forum_title($category, $forum, $thread, $link_thread=false) {
         $is_helpdesk = false;
     }
 
-    $where = $is_helpdesk?tra("Questions and Answers"):tra("Message boards");
+    $where = $is_helpdesk?tra("Questions and Answers"):tra("Forums");
     $top_url = $is_helpdesk?"forum_help_desk.php":"forum_index.php";
 
     if (!$forum && !$thread) {
@@ -196,7 +196,7 @@ function show_forum_title($category, $forum, $thread, $link_thread=false) {
 function show_team_forum_title($forum, $thread=null, $link_thread=false) {
     $team = BoincTeam::lookup_id($forum->category);
     echo "<span class=title>
-        <a href=\"forum_index.php\">".tra("Message boards")."</a> :
+        <a href=\"forum_index.php\">".tra("Forums")."</a> :
     ";
     if ($thread) {
         echo "
@@ -1363,7 +1363,7 @@ function show_mark_as_read_button($user) {
         $url = "forum_index.php?read=1$tokens&amp;return=$return";
         show_button($url,
             tra("Mark all threads as read"),
-            tra("Mark all threads in all message boards as read.")
+            tra("Mark all threads in all forums as read.")
         );
     }
 }

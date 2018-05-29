@@ -182,7 +182,7 @@ For assistance with ".PROJECT." go to ".$master_url;
 function send_banish_email($forum, $user, $duration, $reason) {
     $subject = PROJECT." posting privileges suspended";
     $body = "
-You will not be able to post to the ".PROJECT." message boards
+You will not be able to post to the ".PROJECT." forums
 until ".date('M j, Y G:i', $duration).",
 because your postings have not followed our guidelines.
     ";
@@ -205,7 +205,7 @@ function send_banish_vote_email($user, $duration, $reason, $end_time) {
     $vote_url = $master_url."forum_banishment_vote.php";
     $body = "
 A vote has been started to banish you
-from the ".PROJECT." message boards until ".date('M j,
+from the ".PROJECT." forums until ".date('M j,
 Y G:i', $duration+$now).",
 because your postings have not followed our guidelines.
 
